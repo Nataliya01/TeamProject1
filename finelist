@@ -1,0 +1,21 @@
+function searchFines(searchKey) {
+    let filteredFines = [];
+
+    
+    if (!isNaN(searchKey)) {
+        
+        for (let fine of DB) {
+            if (fine.number === searchKey) {
+                filteredFines.push(fine);
+            }
+        }
+    } else { // 
+        for (let fine of DB) {
+            if (fine.type === searchKey) {
+                filteredFines.push(fine);
+            }
+        }
+    }
+
+    return filteredFines;
+}
